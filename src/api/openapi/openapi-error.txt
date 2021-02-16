@@ -1,0 +1,17 @@
+TS2322: Type '{ openapi: string; info: { version: string; title: string; description: string; termsOfService: string; contact: { name: string; url: string; }; license: { name: string; url: string; }; }; paths: { "/page/": { ...; }; ... 66 more ...; "/data/i18n/{type}": { ...; }; }; components: { ...; }; tags: ({ ...; } | { ...; }...' is not assignable to type 'string | Document'.
+  Type '{ openapi: string; info: { version: string; title: string; description: string; termsOfService: string; contact: { name: string; url: string; }; license: { name: string; url: string; }; }; paths: { "/page/": { ...; }; ... 66 more ...; "/data/i18n/{type}": { ...; }; }; components: { ...; }; tags: ({ ...; } | { ...; }...' is not assignable to type 'Document'.
+    Types of property 'paths' are incompatible.
+      Type '{ "/page/": { get: { tags: string[]; summary: string; description: string; responses: { "200": { description: string; content: { "application/json": { schema: { $ref: string; }; }; }; }; default: { description: string; content: { ...; }; }; }; operationId: string; }; }; ... 66 more ...; "/data/i18n/{type}": { ...; }...' is not assignable to type 'PathsObject<{}>'.
+        Property '"/page/title/{title}"' is incompatible with index signature.
+          Type '{ get: { tags: string[]; summary: string; description: string; parameters: { name: string; in: string; description: string; required: boolean; schema: { type: string; }; }[]; responses: { "200": { description: string; content: { ...; }; }; "301": { ...; }; "302": { ...; }; "404": { ...; }; default: { ...; }; }; oper...' is not assignable to type 'PathItemObject<{}>'.
+            The types of 'get.parameters' are incompatible between these types.
+              Type '{ name: string; in: string; description: string; required: boolean; schema: { type: string; }; }[]' is not assignable to type '(ReferenceObject | ParameterObject)[]'.
+                Type '{ name: string; in: string; description: string; required: boolean; schema: { type: string; }; }' is not assignable to type 'ReferenceObject | ParameterObject'.
+                  Type '{ name: string; in: string; description: string; required: boolean; schema: { type: string; }; }' is not assignable to type 'ParameterObject'.
+                    Types of property 'schema' are incompatible.
+                      Type '{ type: string; }' is not assignable to type 'ReferenceObject | ArraySchemaObject | NonArraySchemaObject | undefined'.
+                        Type '{ type: string; }' is not assignable to type 'NonArraySchemaObject'.
+                          Types of property 'type' are incompatible.
+                            Type 'string' is not assignable to type '"string" | "number" | "boolean" | "object" | "integer" | undefined'.
+
+client.d.ts(39, 9): The expected type comes from property 'definition' which is declared here on type '{ definition: string | Document; quick?: boolean | undefined; axiosConfigDefaults?: AxiosRequestConfig | undefined; swaggerParserOpts?: Options | undefined; withServer?: string | ... 2 more ... | undefined; baseURLVariables?: { ...; } | undefined; transformOperationName?: ((operation: string) => string) | undefined; }'

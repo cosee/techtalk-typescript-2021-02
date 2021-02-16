@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FormEventHandler, useState } from "react";
+import "./App.css";
+import {
+  SummaryResponse,
+  fetchArticleSummary,
+} from "src/api/fetchArticleSummary";
+import { ArticleSummary } from "src/components/ArticleSummary";
+import {fetchRelatedPages, RelatedPage} from "src/api/fetchRelatedPages";
+import {ShowRelatedPages} from "src/components/ShowRelatedPages";
+import {Header} from "src/components/Header";
 
-function App() {
+const App: React.FC = () => {
+  const [summary, setSummary] = useState<SummaryResponse>();
+  const [relatedPages, setRelatedPages] = useState<RelatedPage[]>();
+  const [name, setName] = useState("Rome");
+
+  const loadBook: FormEventHandler = (event) => {
+    fetchArticleSummary(name).then(setSummary);
+    fetchRelatedPages(name).then(setRelatedPages)
+
+    event.preventDefault();
+    event.stopPropagation();
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <form onSubmit={loadBook}>
+        <input
+          type={"text"}
+          placeholder={"Enter name"}
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <input type={"submit"} value={"Load"} />
+      </form>
+      {summary && <ArticleSummary article={summary} />}
+      <hr/>
+      {relatedPages && <ShowRelatedPages pages={relatedPages} />}
     </div>
   );
-}
+};
 
 export default App;

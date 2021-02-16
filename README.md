@@ -1,3 +1,15 @@
+# This is the demo react-app for the Cosee Techtalk of 25.2.2021
+
+This repo has been created using the following commands
+
+## Basic setup
+
+```bash
+yarn create react-app typescript-react-example --template typescript
+
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
