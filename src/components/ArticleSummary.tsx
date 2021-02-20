@@ -1,9 +1,11 @@
 import React from "react";
 import { SummaryResponse } from "src/api/fetchArticleSummary";
 
-export const ArticleSummary: React.FC<{
+type ArticleSummaryProps = {
   article: SummaryResponse;
-}> = ({ article }) => {
+};
+
+export const ArticleSummary: React.FC<ArticleSummaryProps> = ({ article }) => {
   return (
     <div>
       <h1>{article.displaytitle}</h1>

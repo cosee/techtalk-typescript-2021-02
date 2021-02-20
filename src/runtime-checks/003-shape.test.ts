@@ -6,6 +6,11 @@ const isPerson = hasShape({
     name: isString,
 });
 
+type Person = {
+  id: number;
+  name: string;
+}
+
 test("isPerson", () => {
   const x: unknown = {
     id: 1,
@@ -18,6 +23,8 @@ test("isPerson", () => {
 
   const id = x.id;
   const name = x.name;
+
+  const person: Person = x
 
   console.log(id, name)
 });

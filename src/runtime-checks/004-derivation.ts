@@ -1,21 +1,13 @@
-import { hasShape } from "src/runtime-checks/003-shape";
-import { isNumber, isString } from "src/runtime-checks/001-primitives";
-import { RuntimeChecker } from "src/runtime-checks/000-baseTypes";
+import {isString} from "src/runtime-checks/001-primitives";
+import {RuntimeChecker} from "src/runtime-checks/000-baseTypes";
+import {isArray} from "src/runtime-checks/002-array";
 
 export type CheckedType<T> = T extends RuntimeChecker<infer P> ? P : never;
 
 
-const isPerson = hasShape({
-  id: isNumber,
-  name: isString,
-});
 
+const isStringArray = isArray(isString)
 
-type Person = CheckedType<typeof isPerson>;
+type StringArray = CheckedType<typeof isStringArray>;
 
-const person: Person = {
-  id: 1,
-  name: "string",
-};
-
-console.log(person)
+const strArr: StringArray = ["12","23","43"]

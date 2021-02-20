@@ -9,4 +9,7 @@ test("isArray", () => {
   if (!isStringArray(array)) {
     throw new Error("not a string array")
   }
+
+  const x: string[] = array
+
 });
