@@ -1,58 +1,76 @@
-# This is the demo react-app for the Cosee Techtalk of 25.2.2021
 
-This repo has been created using the following commands
+# Cosee TechTalks: Starke Typen - Typescript im Frontend
 
-## Basic setup
+## Example repository
+
+[TechTalk Page](https://talks.cosee.biz/talk/f3584318-c4ed-4eff-8b91-82f442aa7c92)
+
+![](./images/header.png)
+
+This repository contains all the TypeScript code-examples shown in the techtalk, and more:
+
+# Motivation
+
+The motivation of the talk is to show the benefits of using TypeScript in frontend projects,
+especially in React, and to encourage people to use TypeScript in their projects as well.
+
+* src/components/ArticleSummary.tsx
+* src/api/fetchArticleSummary.ts
+
+# TypeScript - Basics
+
+* error-examples/simple-error.ts
+
+## Type definition features
+
+* Primitive Types - language-features/001-basic-types.ts
+* Interfaces vs Type Aliases - language-features/002-interface-and-type.ts
+* Union and intersection Types - language-features/004-union-intersection.ts
+* React components - src/components/ArticleSummary.tsx
+
+# Generate Types from OpenAPI/Swagger
+
+* src/api/openapi/generated/client.d.ts
+* src/api/openapi/generated/openapi.json
+* src/api/openapi/generated/spec.ts
+* src/api/openapi/client.ts 
+* src/api/fetchRelatedPages.ts
+
+As mentioned in the talk, there are scripts that download and preprocess the OpenAPI spec.
+Those are written in NodeJS (pure JavaScript, because setting up TypeScript in Node is not that easy)
+
+* scripts/build-openapi.js
+* scripts/utils/prepare-spec.js
+
+# TypeSafe Translation
+
+* src/i18n/setup-i18next.ts
+* src/i18n/translations.ts
+* src/i18n/useMyTranslation.ts
+
+# Runtime-Checks
+
+* src/runtime-checks/000-baseTypes.ts
+* ...
+* src/runtime-checks/io-ts-example.ts
+
+# Error analysis
+
+* error-examples/complex-error.ts
+
+# Package numbers (TS vs JS)
+
+In order to analyse the number of TypeScript packages in npm, I 
+created an elastic-search index filled with contents from the npm-registry.
+The complete setup to do that is here:
+
+https://gitlab.com/nknapp/typescript-pkg-search
+
+# TypeScript setup
+
+This project was created with the command 
 
 ```bash
 yarn create react-app typescript-react-example --template typescript
-
 ```
 
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
