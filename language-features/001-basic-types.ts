@@ -1,7 +1,7 @@
 const myNumber: number = 15;
 const myString: string = "myString";
 const myBoolean: boolean = true
-const myConstant: 'firstName' = "firstName";
+const myConstant: 'firstName' = "firstName"; // this is called a "literal type"
 const myStringUnion: 'firstname' | 'lastName' | 1 = "lastName"
 
 const myArray: string[] = ["string1","string2"];
