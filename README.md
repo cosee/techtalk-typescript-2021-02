@@ -144,3 +144,5 @@ This project was created with the command
 ```bash
 yarn create react-app typescript-react-example --template typescript
 ```
+
+See package.json for required packages and scripts.
