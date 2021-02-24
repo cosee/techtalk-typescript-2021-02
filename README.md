@@ -1,4 +1,4 @@
-# Cosee TechTalks: Strongly Typed - TypeScript in fronten development
+# Cosee TechTalks: Strongly Typed - TypeScript in frontend development
 
 After 12 years of web-development, I started as fullstack developer at Cosee about two years ago. In my team I was first working in the backend, but also showed interest in the React frontend that we were writing.
 Due to some changes in the team structure, I ended up writing frontend code about one year ago and I had to work my way through tons of JavaScript code in order to implement some features. Often, I wished we had
